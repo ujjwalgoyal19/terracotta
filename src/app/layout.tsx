@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import HeaderNav from "@/components/modules/header-nav";
+import Footer from "@/components/modules/footer";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          inter.className,
+          "flex flex-col justify-between min-h-screen",
+        )}
+      >
+        <HeaderNav />
+        <section className="grid-cols-12">{children}</section>
+        <Footer />
+      </body>
     </html>
   );
 }

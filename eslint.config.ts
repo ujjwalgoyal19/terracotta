@@ -3,6 +3,7 @@ import { defineFlatConfig } from "eslint-define-config";
 import type { SheriffSettings } from "@sherifforg/types";
 
 const sheriffOptions: SheriffSettings = {
+  files: ["./src/**/*"],
   react: true,
   lodash: false,
   next: true,
